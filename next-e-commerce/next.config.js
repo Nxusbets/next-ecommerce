@@ -1,11 +1,9 @@
 const config = require("./config");
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-
-    env: {
-        DB_URI: config.DB_URI,
-    },
+env: {
+DB_URI: config.DB_URI,
+API: config.API,
+},
 };
-
-export default nextConfig;
+module.exports = nextConfig;
