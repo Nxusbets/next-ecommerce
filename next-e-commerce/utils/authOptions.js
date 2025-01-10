@@ -1,7 +1,7 @@
-import { CredentialsProvider } from "next-auth/providers/credentials";
+import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/models/user";
 import bcrypt from "bcrypt";
-import dbConnect from "@/utils/db/connect";
+import dbConnect from "@/utils/dbConnect";
 import { signIn } from "next-auth/react";
 
 export const authOptions = {
