@@ -20,6 +20,9 @@ export default function TopNav() {
                     >Logout
                     </a>
                  </>
+            ) : status === 'loading' ? (
+                <a className='nav-link textt-danger'>Loading...</a>
+                
             ) : (
                 <div className='d-flex'>
                     <Link href="/login" className='nav-link'>
