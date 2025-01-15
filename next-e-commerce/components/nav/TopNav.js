@@ -12,14 +12,16 @@ export default function TopNav() {
             <Link href="/" className="nav-link">Next E-commerce</Link>
 
             {status === "authenticated" ? (
+                <div className='d-flex justify-content-end'>
                 <>
-                <Link href="/dashboard/user" className='nav-link'>
-                {data?.user?.name}                   
+                <Link className='nav-link' href= {`/dashboard/${data?.user?.role === 'admin' ? 'admin' : 'user'}`}>
+                {data?.user?.name} ({data?.user?.role})                   
                 </Link>
-                 <a className='nav-link pointer' onClick={() => signOut({ callbackUrl: "https://solid-space-waffle-wrvw96jqj495h57g7-3000.app.github.dev/login"})}
+                 <a className='nav-link pointer' onClick={() => signOut({ callbackUrl: "/login"})}
                     >Logout
                     </a>
                  </>
+                 </div>
             ) : status === 'loading' ? (
                 <a className='nav-link textt-danger'>Loading...</a>
                 
